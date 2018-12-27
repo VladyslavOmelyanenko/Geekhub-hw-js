@@ -1,132 +1,45 @@
-// level 1
-while(isFree("north")){
-    north();
-}
+function toNorth() {
+    if (isFree('north')){
+        if (north() == 'end') {
+            return 0;
+        }
+        toEast();
+    } else {
+        toWest();
+    }
+};
 
-//level 2
-while(isFree("east")){
-    east();
-}
+function toSouth() {
+    if (isFree('south')){
+        if (south() == 'end') {
+            return 0;
+        }
+        toWest();
+    } else {
+        toEast();
+    }
+};
 
-//level 3, 4
-while(isFree("south") || isFree("east")){
-    south();
-    east();
-}
+function toWest() {
+    if (isFree('west')){
+        if (west() == 'end') {
+            return 0;
+        }
+        toNorth();
+    } else {
+        toSouth();
+    }
+};
 
-//level 5
-while(isFree("west")){
-    west();
-}
+function toEast() {
+    if (isFree('east')){
+        if (east() == 'end') {
+            return 0;
+        }
+        toSouth();
+    } else {
+        toNorth();
+    }
+};
 
-while(isFree("south")){
-    south();
-}
-
-while(isFree("west")){
-    west();
-}
-
-while(isFree("north")){
-    north();
-}
-
-while(isFree("west")){
-    west();
-}
-
-while(isFree("south")){
-    south();
-}
-
-while(isFree("east")){
-    east();
-}
-
-//level 6
-while(isFree("south")){
-    south();
-}
-
-while(isFree("east")){
-    east();
-}
-
-while(isFree("north")){
-    north();
-}
-
-while(isFree("east")){
-    east();
-}
-
-while(isFree("north")){
-    north();
-}
-
-while(isFree("east")){
-    east();
-}
-
-while(isFree("south")){
-    south();
-}
-
-north()
-
-while(isFree("west")){
-    west();
-}
-
-while(isFree("south")){
-    south();
-}
-
-while(isFree("east")){
-    east();
-}
-
-//level 7
-while(isFree("south")){
-    south();
-}
-
-while(isFree("east")){
-    east();
-}
-
-while(isFree("north")){
-    north();
-}
-
-while(isFree("east")){
-    east();
-}
-
-while(isFree("south")){
-    south();
-}
-
-while(isFree("east")){
-    east();
-}
-
-while(isFree("south")){
-    south();
-}
-
-west()
-
-while(isFree("south")){
-    south();
-}
-
-while(isFree("east")){
-    east();
-}
-
-while(isFree("south")){
-    south();
-}
-
-east();
+toNorth();
